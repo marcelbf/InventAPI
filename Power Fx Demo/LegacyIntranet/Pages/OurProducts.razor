@@ -1,0 +1,61 @@
+﻿@page "/ourproducts"
+@inject HttpClient Http
+
+<PageTitle>Our Products</PageTitle>
+
+<h1>Our Products</h1>
+
+<p>Browse our list of spare parts.</p>
+
+@if (productList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ItemId<br />&nbsp;</th>
+                <th>Name<br />&nbsp;</th>
+                <th>Description<br />&nbsp;</th>
+                <th>Price<br />&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in productList)
+            {
+                <tr>
+                    <td>@product.ItemId</td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Product[]? productList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        productList = await Http.GetFromJsonAsync<Product[]>("sample-data/products.json");
+    }
+
+    public class Product
+    {
+        public string? ItemId { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? CategoryId { get; set; }
+
+        public Decimal Price { get; set; }
+
+        public string? Description { get; set; }
+
+        public Dictionary<string, string> CalculatedColumns { get; set; } = new Dictionary<string, string>();
+    }
+}

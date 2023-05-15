@@ -1,0 +1,23 @@
+﻿[
+  {
+    "itemId": "1",
+    "name": "Pumped Water Controller",
+    "categoryId": "PCB Assembly",
+    "price": 45.99,
+    "description": "Water pump controller for combination boiler"
+  },
+  {
+    "itemId": "2",
+    "name": "3.5 W / S Heater",
+    "categoryId": "Heat Exchanger",
+    "price": 125.5,
+    "description": "Small heat exchanger for domestic boiler"
+  },
+  {
+    "itemId": "3",
+    "name": "Inlet Valve",
+    "categoryId": "Valve",
+    "price": 120.2,
+    "description": "Water inlet valve with one - way operation"
+  }
+]
