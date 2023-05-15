@@ -20,6 +20,13 @@ else
                 <th>Name<br />&nbsp;</th>
                 <th>Description<br />&nbsp;</th>
                 <th>Price<br />&nbsp;</th>
+
+                @foreach (var column in powerFxColumns)
+                {
+                    <th>@column.Key<br /><u>[ <a @onclick="e => RemoveColumn(column.Key)">Remove</a> ]</u></th>
+                }
+
+                <th>&nbsp;<br /><u>[ <a @onclick="ShowDialog">Add Column</a> ]</u></th>
             </tr>
         </thead>
         <tbody>
@@ -30,18 +37,100 @@ else
                     <td>@product.Name</td>
                     <td>@product.Description</td>
                     <td>@product.Price</td>
+
+                    @foreach (var column in powerFxColumns)
+                    {
+                        <td>@product.CalculatedColumns[column.Key]</td>
+                    }
                 </tr>
             }
         </tbody>
     </table>
+
+    @if (showDialog)
+    {
+        <div class="overlay">
+            <div class="overlay-content">
+                <p>
+                    New Column Name:<br />
+                    <input type="text" @bind="columnName" size="50">
+                </p>
+                <p>
+                    Power Fx Expression:<br />
+                    <textarea @bind="columnExpression" rows="10" cols="100"></textarea><br />
+                    <button @onclick="AddColumn">Add Column</button> &nbsp; <button @onclick="CloseDialog">Cancel</button>
+                </p>
+
+                <div>
+                    @errors
+                </div>
+            </div>
+        </div>
+    }
 }
 
 @code {
     private Product[]? productList;
 
+    private Dictionary<string, string> powerFxColumns = new Dictionary<string, string>();
+
+    private bool showDialog = false;
+    private string? columnName;
+    private string? columnExpression;
+
+    private string errors = string.Empty;
+
     protected override async Task OnInitializedAsync()
     {
         productList = await Http.GetFromJsonAsync<Product[]>("sample-data/products.json");
+    }
+
+    protected void ShowDialog()
+    {
+        showDialog = true;
+    }
+    protected void CloseDialog()
+    {
+        showDialog = false;
+        errors = string.Empty;
+    }
+
+    protected void RemoveColumn(string name)
+    {
+        powerFxColumns.Remove(name);
+
+        foreach (var product in productList)
+        {
+            product.CalculatedColumns.Remove(name);
+        }
+    }
+
+    protected Task AddColumn()
+    {
+        return AddColumn(columnName, columnExpression);
+    }
+
+    protected async Task AddColumn(string name, string expression)
+    {
+        errors = string.Empty;
+
+        if (!powerFxColumns.ContainsKey(columnName))
+        {
+            foreach (var product in productList)
+            {
+                string value = string.Empty;
+
+                product.CalculatedColumns.Add(name, value);
+            }
+
+            powerFxColumns.Add(name, expression);
+        }
+        else
+        {
+            errors = $"Column '{name}' already exists. Choose a different name or remove the existing column.";
+        }
+
+        CloseDialog();
     }
 
     public class Product
