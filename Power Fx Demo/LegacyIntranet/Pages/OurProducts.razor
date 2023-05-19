@@ -1,4 +1,7 @@
 ﻿@page "/ourproducts"
+@using Microsoft.OpenApi.Readers;
+@using Microsoft.PowerFx;
+@using Microsoft.PowerFx.Types;
 @inject HttpClient Http
 
 <PageTitle>Our Products</PageTitle>
@@ -114,7 +117,7 @@ else
     {
         errors = string.Empty;
 
-        if (!powerFxColumns.ContainsKey(columnName))
+        if (!powerFxColumns.ContainsKey(name))
         {
             foreach (var product in productList)
             {
