@@ -81,17 +81,71 @@ else
     private string? columnName;
     private string? columnExpression;
 
+    //// Power Fx interpreter and type marshaller members
+    //RecalcEngine? engine;
+    //TypeMarshallerCache? cache;
+    //ITypeMarshaller? productType;
+
     private string errors = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
         productList = await Http.GetFromJsonAsync<Product[]>("sample-data/products.json");
+
+        //// Initialize Power Fx interpreter RecalcEngine
+        //var config = new PowerFxConfig(Features.PowerFxV1);
+        //engine = new RecalcEngine(config);
+
+        //// Initialize out type marshaller cache
+        //cache = new TypeMarshallerCache();
+        //productType = cache.GetMarshaller(typeof(Product));
+
+
+        //// Create strongly-typed Power Fx objects from the swagger
+        //var swagger = await Http.GetStringAsync(
+        //    "https://inventapi.azurewebsites.net/swagger/v1/swagger.json");
+        //var openAPIDoc = new OpenApiStringReader().Read(swagger, out OpenApiDiagnostic diag);
+        //var client = new HttpClient { BaseAddress = new Uri("https://inventapi.azurewebsites.net") };
+        //// Add the service to the Power Fx configuration as "InventAPI_Connector"
+        //config.AddService("InventAPI_Connector", openAPIDoc, client);
+
+        //// Sum( InventAPI_Connector.GetInventOnHand( ItemId ), numberInStock )
+    }
+
+    protected async Task AddColumn(string name, string expression)
+    {
+        errors = string.Empty;
+
+        if (!powerFxColumns.ContainsKey(name))
+        {
+            foreach (var product in productList)
+            {
+                var value = string.Empty;
+
+                //var value = (await engine.EvalAsync(
+                //    expression,
+                //    cancellationToken: default,
+                //    productType.Marshal(product) as RecordValue
+                //)).ToObject().ToString();
+
+                product.CalculatedColumns.Add(name, value);
+            }
+
+            powerFxColumns.Add(name, expression);
+        }
+        else
+        {
+            errors = $"Column '{name}' already exists. Choose a different name or remove the existing column.";
+        }
+
+        CloseDialog();
     }
 
     protected void ShowDialog()
     {
         showDialog = true;
     }
+
     protected void CloseDialog()
     {
         showDialog = false;
@@ -111,29 +165,6 @@ else
     protected Task AddColumn()
     {
         return AddColumn(columnName, columnExpression);
-    }
-
-    protected async Task AddColumn(string name, string expression)
-    {
-        errors = string.Empty;
-
-        if (!powerFxColumns.ContainsKey(name))
-        {
-            foreach (var product in productList)
-            {
-                string value = string.Empty;
-
-                product.CalculatedColumns.Add(name, value);
-            }
-
-            powerFxColumns.Add(name, expression);
-        }
-        else
-        {
-            errors = $"Column '{name}' already exists. Choose a different name or remove the existing column.";
-        }
-
-        CloseDialog();
     }
 
     public class Product
