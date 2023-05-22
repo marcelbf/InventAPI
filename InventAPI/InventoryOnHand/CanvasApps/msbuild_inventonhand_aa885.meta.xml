@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>msbuild_inventonhand_aa885</Name>
+  <AppVersion>2023-05-22T19:24:09Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.23051.23.0</CreatedByClientVersion>
+  <MinClientVersion>3.23051.23.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.23051.23","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>InventOnHand</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"d194eea3-837e-404f-bedf-bcf23d38b6e1":{"id":"/providers/microsoft.powerapps/apis/shared_new-5finventapi-5fconnector-5fad84488acc8b1b71","displayName":"InventAPI_Connector","iconUri":"https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png","dataSources":["InventAPI_Connector"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"dataSets":{},"apiTier":"Standard","actions":["GetItems","GetInventOnHand"],"customApiLogicalName":"new_inventapi-5Fconnector","isCustomApiSolutionAware":true}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"new_inventapi-5Fconnector","componenttype":372,"componenttypeplatformname":"connector"}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/msbuild_inventonhand_aa885_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/msbuild_inventonhand_aa885_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
