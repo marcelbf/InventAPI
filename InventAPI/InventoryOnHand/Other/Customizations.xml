@@ -11,6 +11,7 @@
   <optionsets />
   <CustomControls />
   <EntityDataProviders />
+  <CanvasApps />
   <Connectors />
   <Languages>
     <Language>1033</Language>
