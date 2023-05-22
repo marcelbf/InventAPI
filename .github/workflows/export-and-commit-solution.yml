@@ -51,8 +51,7 @@ jobs:
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.repository.name}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
-        overwrite: true
-        process-canvas-apps: true
+        overwrite: true        
         
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
@@ -61,6 +60,7 @@ jobs:
         solution-folder: ${{ github.event.repository.name}}/${{ github.event.inputs.solution_name }}
         solution-type: 'Unmanaged'
         overwrite-files: true
+        process-canvas-apps: true
         
     - name: export-managed-solution
       uses: microsoft/powerplatform-actions/export-solution@v0
