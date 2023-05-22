@@ -1,0 +1,133 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "InventAPI_Connector",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Warehouse": {
+      "get": {
+        "tags": [
+          "InventAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "operationId": "GetWarehouses",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Warehouse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Items": {
+      "get": {
+        "tags": [
+          "InventAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "operationId": "GetItems",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Item"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/InventOnHand/{ItemId}": {
+      "get": {
+        "tags": [
+          "InventAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "operationId": "GetInventOnHand",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ItemId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/InventOnHand"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "InventOnHand": {
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "numberInStock": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Item": {
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Warehouse": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "host": "rwc0qvh2-5203.usw2.devtunnels.ms",
+  "schemes": [
+    "https"
+  ]
+}
