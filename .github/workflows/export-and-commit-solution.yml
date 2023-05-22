@@ -52,6 +52,7 @@ jobs:
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.repository.name}}/${{ github.event.inputs.solution_name }}_unmanaged.zip
         overwrite: true
+        process-canvas-apps: true
         
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
