@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <connectorid>ad967b77-d5f8-ed11-8848-00224809bc5b</connectorid>
+  <connectorid>0f4730e6-b3f9-ed11-8848-00224809bc5b</connectorid>
   <description></description>
   <displayname>InventAPI_Connector</displayname>
   <iconbrandcolor>#007ee5</iconbrandcolor>
