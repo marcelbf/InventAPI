@@ -1,6 +1,6 @@
 # Power Platform for Pro Developers Sample
 
-This is a demo repository to showcase scenarios where Professional Developers (AKA code-first developers) can make use of Power Platform to be more productve and/or inovative.
+This is a demo repository to showcase scenarios where Professional Developers (AKA code-first developers) can make use of Power Platform to be more productive and/or innovative.
 
 ## Scenario
 
@@ -9,9 +9,9 @@ When in appointments, field technicians don't have a way to check if a given par
 
 They have to manually call each warehouse to check in their legacy internal system.
 
-The back-end developer built an API to get the list of items and the invent on hand for each warehouse and now she/he wants to build a phone app to the field techinicians.
+The back-end developer built an API to get the list of items and the inventory on hand for each warehouse and now she/he wants to build a phone app for the field technicians.
 
-The back-end developer uses Visual Studio, and will now use Power Platform to build a phone app to the field technicians.
+The back-end developer uses Visual Studio and will now use Power Platform to build a phone app to the field technicians.
 
 ## Components
 
