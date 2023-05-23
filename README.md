@@ -5,8 +5,12 @@ This is a demo repository to showcase scenarios where Professional Developers (A
 ## Scenario
 
 This is a HVAC company, where they have a legacy inventory management system.
-When in appointments, field technicians don't have a way to check if a given part is available in a warehouse. They have to manually call each warehouse to check in their legacy internal system.
+When in appointments, field technicians don't have a way to check if a given part is available in a warehouse. 
+
+They have to manually call each warehouse to check in their legacy internal system.
+
 The back-end developer built an API to get the list of items and the invent on hand for each warehouse and now she/he wants to build a phone app to the field techinicians.
+
 The back-end developer uses Visual Studio, and will now use Power Platform to build a phone app to the field technicians.
 
 ## Components
