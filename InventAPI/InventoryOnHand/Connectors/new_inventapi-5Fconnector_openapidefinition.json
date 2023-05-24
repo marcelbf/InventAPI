@@ -126,7 +126,7 @@
       "additionalProperties": false
     }
   },
-  "host": "kc75wr9r-5203.usw2.devtunnels.ms",
+  "host": "inventapi.azurewebsites.net",
   "schemes": [
     "https"
   ]
