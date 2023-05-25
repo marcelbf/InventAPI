@@ -1,8 +1,0 @@
-[
-  {
-    "ApiId": "/providers/microsoft.powerapps/apis/shared_new-5finventapi-5fconnector-5fad84488acc8b1b71",
-    "Name": "InventAPI_Connector",
-    "ServiceKind": "ConnectedWadl",
-    "Type": "ServiceInfo"
-  }
-]
