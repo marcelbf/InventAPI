@@ -2,6 +2,8 @@
 
 This is a demo repository to showcase scenarios where Professional Developers (AKA code-first developers) can make use of Power Platform to be more productive and/or innovative.
 
+To get a free Power Platform environment, sign up for the [developer plan](https://aka.ms/PowerAppsDevPlan).
+
 ## Scenario
 
 This is a HVAC company, where they have a legacy inventory management system.
