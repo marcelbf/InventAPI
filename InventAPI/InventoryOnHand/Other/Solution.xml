@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23043.234" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23062.180" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>InventoryOnHand</UniqueName>
     <LocalizedNames>
@@ -80,8 +80,8 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="300" schemaName="msbuild_inventonhand_22c86" behavior="0" />
-      <RootComponent type="372" id="{0f4730e6-b3f9-ed11-8848-00224809bc5b}" schemaName="new_inventapi-5Fconnector" behavior="0" />
+      <RootComponent type="300" schemaName="msbuild_inventonhand_1a1f8" behavior="0" />
+      <RootComponent type="372" id="{dc75a4d9-ec25-ee11-9966-00224809bc5b}" schemaName="new_inventapi-5Fconnector" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
