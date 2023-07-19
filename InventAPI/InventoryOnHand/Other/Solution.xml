@@ -80,8 +80,8 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="300" schemaName="msbuild_inventonhand_1a1f8" behavior="0" />
-      <RootComponent type="372" id="{dc75a4d9-ec25-ee11-9966-00224809bc5b}" schemaName="new_inventapi-5Fconnector" behavior="0" />
+      <RootComponent type="300" schemaName="msbuild_inventonhand_2be80" behavior="0" />
+      <RootComponent type="372" id="{83d89ce3-4626-ee11-9966-00224809bc5b}" schemaName="new_inventapi-5Fconnector" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
