@@ -1,6 +1,6 @@
 # Power Platform for Pro Developers Sample
 
-This is a demo repository to showcase scenarios how Professional Developers (AKA code-first developers) can make use of [Power Platform](https://aka.ms/PowerDev) to be more productive and/or innovative.
+This is a demo repository to showcase scenarios and how Professional Developers (AKA code-first developers) can make use of [Power Platform](https://aka.ms/PowerDev) to be more productive and/or innovative.
 
 To get a free Power Platform environment, sign up for the [developer plan](https://aka.ms/PowerAppsDevPlan).
 
