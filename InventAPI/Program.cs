@@ -22,7 +22,10 @@ var app = builder.Build();
 
 app.UseCors("CorsAllowAll");
 
-app.UseSwagger();
+app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
 app.UseSwaggerUI();
 
 app.MapGet("/Warehouse", () =>
